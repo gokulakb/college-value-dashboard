@@ -1,0 +1,30 @@
+{
+  "name": "college-value-dashboard",
+  "version": "1.0.0",
+  "description": "Decision-grade analytics dashboard for college placement officers and administrators",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node database/seed.js"
+  },
+  "keywords": [
+    "dashboard",
+    "analytics",
+    "college",
+    "placement",
+    "education"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "express-session": "^1.19.0",
+    "sqlite3": "^5.1.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

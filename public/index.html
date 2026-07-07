@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Value Dashboard - Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>College Value Dashboard</h1>
+                <p>Decision-grade analytics for placement officers</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+                
+                <button type="submit" class="login-button">Sign In</button>
+            </form>
+            
+            <div class="demo-credentials">
+                <h4>Demo Credentials</h4>
+                <div class="credential-grid">
+                    <div class="credential-item">
+                        <strong>College Users:</strong>
+                        <span>officer@iitb.edu / demo123</span>
+                        <span>officer@reva.edu / demo123</span>
+                        <span>officer@nitk.edu / demo123</span>
+                        <span>officer@pes.edu / demo123</span>
+                    </div>
+                    <div class="credential-item">
+                        <strong>Admin:</strong>
+                        <span>admin@collegevalue.com / admin123</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/login.js"></script>
+</body>
+</html>

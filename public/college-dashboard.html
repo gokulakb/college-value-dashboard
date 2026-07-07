@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Value Dashboard - College</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>College Value</h2>
+                <span>Dashboard</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#" data-section="overview" class="active">Overview</a></li>
+                <li><a href="#" data-section="funnel">Placement Funnel</a></li>
+                <li><a href="#" data-section="engagement">Student Engagement</a></li>
+                <li><a href="#" data-section="hiring">Hiring Outcomes</a></li>
+                <li><a href="#" data-section="recruiter">Recruiter Activity</a></li>
+                <li><a href="#" data-section="insights">Decision Insights</a></li>
+                <li><a href="#" data-section="trust">Data Trust</a></li>
+                <li><a href="#" data-section="dictionary">Metric Dictionary</a></li>
+                <li><a href="#" data-section="privacy">Privacy & Data Isolation</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1 id="dashboardTitle">College Value Dashboard</h1>
+                    <span id="collegeName" class="college-name">Loading...</span>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <span id="lastRefreshed" class="last-refreshed">Last refreshed: --</span>
+                        <button id="refreshBtn" class="btn btn-secondary">↻ Refresh</button>
+                        <button id="exportBtn" class="btn btn-primary">📊 Export CSV</button>
+                        <button id="logoutBtn" class="btn btn-danger">Logout</button>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Content -->
+            <div id="dashboardContent">
+                <!-- Loading State -->
+                <div id="loadingState" class="state-container">
+                    <div class="spinner"></div>
+                    <p>Loading dashboard data...</p>
+                </div>
+                
+                <!-- Error State -->
+                <div id="errorState" class="state-container" style="display: none;">
+                    <div class="error-icon">⚠️</div>
+                    <p>Unable to load dashboard data. Please try again.</p>
+                    <button id="retryBtn" class="btn btn-primary">Retry</button>
+                </div>
+                
+                <!-- Empty State -->
+                <div id="emptyState" class="state-container" style="display: none;">
+                    <div class="empty-icon">📊</div>
+                    <p>No data available for this period.</p>
+                </div>
+                
+                <!-- Overview Section -->
+                <section id="section-overview" class="dashboard-section active">
+                    <div class="kpi-grid" id="kpiGrid">
+                        <!-- KPI cards will be rendered here -->
+                    </div>
+                    
+                    <div class="chart-grid">
+                        <div class="chart-card">
+                            <h3>Placement Funnel</h3>
+                            <canvas id="funnelChart" height="250"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Monthly Application Trend</h3>
+                            <canvas id="applicationTrendChart" height="250"></canvas>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Funnel Section -->
+                <section id="section-funnel" class="dashboard-section">
+                    <div class="chart-card full-width">
+                        <h3>Placement Funnel - Detailed View</h3>
+                        <canvas id="funnelChartFull" height="300"></canvas>
+                    </div>
+                </section>
+                
+                <!-- Engagement Section -->
+                <section id="section-engagement" class="dashboard-section">
+                    <div class="chart-grid">
+                        <div class="chart-card">
+                            <h3>Department Performance</h3>
+                            <canvas id="departmentChart" height="250"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Offer Status Distribution</h3>
+                            <canvas id="offerDistributionChart" height="250"></canvas>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Hiring Section -->
+                <section id="section-hiring" class="dashboard-section">
+                    <div class="chart-card full-width">
+                        <h3>Hiring Outcomes</h3>
+                        <canvas id="hiringOutcomesChart" height="300"></canvas>
+                    </div>
+                </section>
+                
+                <!-- Recruiter Section -->
+                <section id="section-recruiter" class="dashboard-section">
+                    <div class="chart-card full-width">
+                        <h3>Recruiter Activity Trend</h3>
+                        <canvas id="recruiterTrendChart" height="300"></canvas>
+                    </div>
+                </section>
+                
+                <!-- Insights Section -->
+                <section id="section-insights" class="dashboard-section">
+                    <h2>Actionable Decision Insights</h2>
+                    <div id="insightsContainer">
+                        <!-- Insights will be rendered here -->
+                    </div>
+                </section>
+                
+                <!-- Data Trust Section -->
+                <section id="section-trust" class="dashboard-section">
+                    <h2>Data Trust Panel</h2>
+                    <div id="trustPanel">
+                        <!-- Trust panel will be rendered here -->
+                    </div>
+                </section>
+                
+                <!-- Metric Dictionary Section -->
+                <section id="section-dictionary" class="dashboard-section">
+                    <h2>Metric Dictionary</h2>
+                    <div id="dictionaryContainer">
+                        <!-- Dictionary will be rendered here -->
+                    </div>
+                </section>
+                
+                <!-- Privacy Section -->
+                <section id="section-privacy" class="dashboard-section">
+                    <h2>Privacy & Data Isolation</h2>
+                    <div id="privacyPanel">
+                        <!-- Privacy panel will be rendered here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/js/college-dashboard.js"></script>
+</body>
+</html>

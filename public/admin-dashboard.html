@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Value Dashboard - Admin</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>College Value</h2>
+                <span>Admin</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#" data-section="overview" class="active">Platform Overview</a></li>
+                <li><a href="#" data-section="comparison">College Comparison</a></li>
+                <li><a href="#" data-section="performance">Performance</a></li>
+                <li><a href="#" data-section="events">Portal Events</a></li>
+                <li><a href="#" data-section="quality">Data Quality</a></li>
+                <li><a href="#" data-section="trust">Data Trust</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Admin Dashboard</h1>
+                    <span class="college-name">Platform Administrator</span>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <span id="lastRefreshed" class="last-refreshed">Last refreshed: --</span>
+                        <button id="refreshBtn" class="btn btn-secondary">↻ Refresh</button>
+                        <button id="logoutBtn" class="btn btn-danger">Logout</button>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Content -->
+            <div id="dashboardContent">
+                <!-- Loading State -->
+                <div id="loadingState" class="state-container">
+                    <div class="spinner"></div>
+                    <p>Loading dashboard data...</p>
+                </div>
+                
+                <!-- Error State -->
+                <div id="errorState" class="state-container" style="display: none;">
+                    <div class="error-icon">⚠️</div>
+                    <p>Unable to load dashboard data. Please try again.</p>
+                    <button id="retryBtn" class="btn btn-primary">Retry</button>
+                </div>
+                
+                <!-- Empty State -->
+                <div id="emptyState" class="state-container" style="display: none;">
+                    <div class="empty-icon">📊</div>
+                    <p>No data available for this period.</p>
+                </div>
+                
+                <!-- Overview Section -->
+                <section id="section-overview" class="dashboard-section active">
+                    <div class="kpi-grid" id="adminKpiGrid">
+                        <!-- Admin KPI cards will be rendered here -->
+                    </div>
+                    
+                    <div class="chart-grid">
+                        <div class="chart-card">
+                            <h3>College Placement Rate Comparison</h3>
+                            <canvas id="placementComparisonChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>College Engagement Comparison</h3>
+                            <canvas id="engagementComparisonChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Comparison Section -->
+                <section id="section-comparison" class="dashboard-section">
+                    <h2>College Comparison</h2>
+                    <div id="comparisonTableContainer">
+                        <!-- Comparison table will be rendered here -->
+                    </div>
+                </section>
+                
+                <!-- Performance Section -->
+                <section id="section-performance" class="dashboard-section">
+                    <div class="chart-grid">
+                        <div class="chart-card">
+                            <h3>College Skill Readiness Comparison</h3>
+                            <canvas id="skillReadinessChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Platform Event Trend</h3>
+                            <canvas id="platformEventChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Events Section -->
+                <section id="section-events" class="dashboard-section">
+                    <div class="chart-card full-width">
+                        <h3>Platform Event Activity</h3>
+                        <canvas id="platformEventTrendChart"></canvas>
+                    </div>
+                </section>
+                
+                <!-- Data Quality Section -->
+                <section id="section-quality" class="dashboard-section">
+                    <h2>Data Quality</h2>
+                    <div id="qualityPanel">
+                        <!-- Quality panel will be rendered here -->
+                    </div>
+                </section>
+                
+                <!-- Data Trust Section -->
+                <section id="section-trust" class="dashboard-section">
+                    <h2>Data Trust Panel</h2>
+                    <div id="trustPanel">
+                        <!-- Trust panel will be rendered here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/js/admin-dashboard.js"></script>
+</body>
+</html>
