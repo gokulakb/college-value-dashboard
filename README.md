@@ -798,5 +798,3 @@ Password: admin123
 This project is developed for educational and internship evaluation purposes.
 
 ---
-
-**Task 20 · College Value Dashboard — Live and Demoable**
